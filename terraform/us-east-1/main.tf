@@ -25,3 +25,12 @@ module "vpc" {
   project     = var.project
   environment = var.environment
 }
+module "ecs" {
+  source             = "../modules/ecs"
+  project            = var.project
+  environment        = var.environment
+  vpc_id             = module.vpc.vpc_id
+  public_subnet_ids  = module.vpc.public_subnet_ids
+  private_subnet_ids = module.vpc.private_subnet_ids
+  container_image    = "668774618240.dkr.ecr.us-east-1.amazonaws.com/aws-reliability-lab:latest"
+}
