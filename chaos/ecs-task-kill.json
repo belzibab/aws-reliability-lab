@@ -1,0 +1,28 @@
+{
+  "description": "Kill one ECS task and verify auto-recovery",
+  "targets": {
+    "ecs-tasks": {
+      "resourceType": "aws:ecs:task",
+      "selectionMode": "COUNT(1)",
+      "resourceTags": { "Project": "aws-reliability-lab" },
+      "filters": [
+        {
+          "path": "clusterArn",
+          "values": ["arn:aws:ecs:us-east-1:ACCOUNT_ID:cluster/aws-reliability-lab-dev-cluster"]
+        }
+      ]
+    }
+  },
+  "actions": {
+    "kill-ecs-task": {
+      "actionId": "aws:ecs:stop-task",
+      "targets": { "Tasks": "ecs-tasks" }
+    }
+  },
+  "stopConditions": [
+    {
+      "source": "aws:cloudwatch:alarm",
+      "value": "arn:aws:cloudwatch:us-east-1:ACCOUNT_ID:alarm:aws-reliability-lab-dev-fis-stop-condition"
+    }
+  ]
+}
