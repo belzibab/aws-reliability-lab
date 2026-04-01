@@ -5,24 +5,6 @@ A production-grade multi-region reliability platform on AWS, built to demonstrat
 ## Architecture
 
 ![image alt](https://github.com/belzibab/belzibab/blob/10dbc69b371856f8f29f812594c1257c2b837330/images/sre_project_architecture.svg)
-```
-GitHub Actions (OIDC, no static keys)
-        │
-        ▼
-┌─────────────────────────────┐
-│        us-east-1 (primary)  │
-│  ALB → ECS Fargate → RDS    │
-│  CloudWatch + SNS alarms    │
-│  Route53 health check       │
-└─────────────────────────────┘
-        │
-        │ Aurora replication (design)
-        ▼
-┌─────────────────────────────┐
-│       us-west-2 (failover)  │
-│  ALB → ECS Fargate → RDS    │
-└─────────────────────────────┘
-```
 
 ## Stack
 
