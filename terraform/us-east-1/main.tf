@@ -34,3 +34,11 @@ module "ecs" {
   private_subnet_ids = module.vpc.private_subnet_ids
   container_image    = "668774618240.dkr.ecr.us-east-1.amazonaws.com/aws-reliability-lab:latest"
 }
+module "rds" {
+  source             = "../modules/rds"
+  project            = var.project
+  environment        = var.environment
+  vpc_id             = module.vpc.vpc_id
+  private_subnet_ids = module.vpc.private_subnet_ids
+  db_password        = var.db_password
+}
