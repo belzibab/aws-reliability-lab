@@ -4,7 +4,7 @@ A production-grade multi-region reliability platform on AWS, built to demonstrat
 
 ## Architecture
 
-![image alt]([https://github.com/belzibab/belzibab/blob/10dbc69b371856f8f29f812594c1257c2b837330/images/sre_project_architecture.svg](https://github.com/belzibab/belzibab/blob/10dbc69b371856f8f29f812594c1257c2b837330/images/aws_reliability_lab_architecture.svg))
+![image alt](https://github.com/belzibab/belzibab/blob/10dbc69b371856f8f29f812594c1257c2b837330/images/aws_reliability_lab_architecture.svg)
 
 ## Stack
 
