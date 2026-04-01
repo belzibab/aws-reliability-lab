@@ -1,6 +1,6 @@
 # aws-reliability-lab
 
-A production-grade multi-region reliability platform on AWS, built to demonstrate SRE engineering practices: infrastructure as code, observability, SLO-driven operations, and chaos engineering.
+A production-grade multi-region reliability platform on AWS, built to demonstrate: infrastructure as code, observability, SLO-driven operations, and chaos engineering.
 
 ## Architecture
 
