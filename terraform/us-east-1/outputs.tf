@@ -7,3 +7,7 @@ output "rds_endpoint" {
   description = "RDS cluster endpoint"
   value       = module.rds.cluster_endpoint
 }
+output "health_check_id" {
+  description = "Route53 health check ID"
+  value       = module.route53.health_check_id
+}

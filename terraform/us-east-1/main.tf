@@ -42,3 +42,10 @@ module "rds" {
   private_subnet_ids = module.vpc.private_subnet_ids
   db_password        = var.db_password
 }
+module "route53" {
+  source               = "../modules/route53"
+  project              = var.project
+  environment          = var.environment
+  primary_alb_dns_name = module.ecs.alb_dns_name
+  primary_alb_zone_id  = "Z35SXDOTRQ7X7K"
+}
