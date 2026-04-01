@@ -20,11 +20,13 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
+
 module "vpc" {
   source      = "../modules/vpc"
   project     = var.project
   environment = var.environment
 }
+
 module "ecs" {
   source             = "../modules/ecs"
   project            = var.project
@@ -34,6 +36,7 @@ module "ecs" {
   private_subnet_ids = module.vpc.private_subnet_ids
   container_image    = "668774618240.dkr.ecr.us-east-1.amazonaws.com/aws-reliability-lab:latest"
 }
+
 module "rds" {
   source             = "../modules/rds"
   project            = var.project
@@ -42,10 +45,22 @@ module "rds" {
   private_subnet_ids = module.vpc.private_subnet_ids
   db_password        = var.db_password
 }
+
 module "route53" {
   source               = "../modules/route53"
   project              = var.project
   environment          = var.environment
   primary_alb_dns_name = module.ecs.alb_dns_name
   primary_alb_zone_id  = "Z35SXDOTRQ7X7K"
+}
+
+module "observability" {
+  source                  = "../modules/observability"
+  project                 = var.project
+  environment             = var.environment
+  ecs_cluster_name        = module.ecs.ecs_cluster_name
+  ecs_service_name        = module.ecs.ecs_service_name
+  alb_arn_suffix          = "app/aws-reliability-lab-dev-alb/8b0193475e18dd63"
+  target_group_arn_suffix = "targetgroup/aws-reliability-lab-dev-tg/3e6a3eb3d49d90b2"
+  alarm_email             = var.alarm_email
 }

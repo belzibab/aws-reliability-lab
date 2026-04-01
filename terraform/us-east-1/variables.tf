@@ -20,3 +20,7 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
+variable "alarm_email" {
+  description = "Email for alarm notifications"
+  type        = string
+}
