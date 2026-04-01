@@ -13,6 +13,7 @@ permissions:
 env:
   TF_VERSION: "1.7.0"
   AWS_REGION: "us-east-1"
+  TF_VAR_db_password: ${{ secrets.TF_VAR_db_password }}
 
 jobs:
   terraform:
