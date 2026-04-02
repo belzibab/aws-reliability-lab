@@ -113,7 +113,7 @@ terraform destroy
 >
 > ### SLO Dashboard - CloudWatch
 > ![image alt](https://github.com/belzibab/aws-reliability-lab/blob/87c3f10ea4a847bc2770194a3590146181e56cb3/docs/screenshots/cloudwatchDashBoard.png)
-> *ALB reques count spike and p99 latency approaching SLO threshold (2s) during load test *
+> *ALB reques count spike and p99 latency approaching SLO threshold (2s) during load test*
 >
 > ### ECS Service Health - CPU & Memory
 > ![image alt](https://github.com/belzibab/aws-reliability-lab/blob/87c3f10ea4a847bc2770194a3590146181e56cb3/docs/screenshots/ecs-metrics.png)
