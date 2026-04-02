@@ -108,3 +108,17 @@ terraform destroy
 ```
 
 > Remember to also delete the ECR repository and S3 bootstrap bucket manually if no longer needed.
+>
+> ## Screenshots
+>
+> ### SLO Dashboard - CloudWatch
+> ![image alt](https://github.com/belzibab/aws-reliability-lab/blob/87c3f10ea4a847bc2770194a3590146181e56cb3/docs/screenshots/cloudwatchDashBoard.png)
+> *ALB reques count spike and p99 latency approaching SLO threshold (2s) during load test *
+>
+> ### ECS Service Health - CPU & Memory
+> ![image alt](https://github.com/belzibab/aws-reliability-lab/blob/87c3f10ea4a847bc2770194a3590146181e56cb3/docs/screenshots/ecs-metrics.png)
+> *CPU and memory utilization during load test - Fargate auto-manages capacity*
+>
+> ### Route53 Health Check
+> ![image alt](https://github.com/belzibab/aws-reliability-lab/blob/87c3f10ea4a847bc2770194a3590146181e56cb3/docs/screenshots/Route53-healthcheck.png)
+> *Primary ALB health check in healthy state*
