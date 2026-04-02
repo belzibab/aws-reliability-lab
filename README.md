@@ -2,6 +2,8 @@
 
 A production-grade multi-region reliability platform on AWS, built to demonstrate: infrastructure as code, observability, SLO-driven operations, and chaos engineering.
 
+![image alt](https://github.com/belzibab/belzibab/blob/8f2fd84d83e7c3789ee4c5af70e4d78c1555f31e/images/aws-reliability-lab-bg.png)
+
 ## Architecture
 
 ![image alt](https://github.com/belzibab/belzibab/blob/10dbc69b371856f8f29f812594c1257c2b837330/images/aws_reliability_lab_architecture.svg)
